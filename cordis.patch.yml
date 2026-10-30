@@ -1,0 +1,33 @@
+# Usage Watch bundle patch：插入 Host 行。
+#
+# 所有 config 字段都可省略；省略时用 lib/config.js 里的默认值。
+# 用户也可以在插件界面「设置」里改（写进 %USERPROFILE%\.dsh\usage-watch\state.json，
+# 优先级高于这里的 config）。
+- insert:
+    - id: usage-watch
+      name: 'dsh-usage-watch'
+      config:
+        # Host 侧刷新进程/额度接口的间隔（秒）。浏览器每 5 秒拉一次缓存状态。
+        refreshSeconds: 30
+        # 日用量历史保留天数（DSH Token 卡片的下方小柱图）。
+        historyDays: 14
+        # DSH Token 的每日预算；0 表示不设预算、只显示用量。
+        # apiEndpoint 是本地 token-usage-api（默认 127.0.0.1:8765）的地址；
+        # 留空字符串表示不调用接口、只用本机 llm/stream 统计。
+        dshtoken:
+          dailyLimit: 0
+          apiEndpoint: 'http://127.0.0.1:8765/api/v1/token/usage'
+        # 两个本地桌面服务。processes 是 Get-Process 的进程名（不区分大小写）。
+        # tokenEndpoint 是「token 用量接口」：豆包用豆包提供的 8765 接口，
+        # 卡片会显示接口返回的 today.totalTokens；留空则不显示这一行。
+        services:
+          doubao:
+            label: 豆包
+            processes:
+              - Doubao
+            tokenEndpoint: 'http://127.0.0.1:8765/api/v1/token/usage'
+          workbuddy:
+            label: WorkBuddy
+            processes:
+              - WorkBuddy
+              - workbuddy

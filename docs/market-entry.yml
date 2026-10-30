@@ -1,0 +1,20 @@
+# 上架条目模板
+#
+# 用法：提交到 awesome-dsh-plugin 仓库时，复制为
+#   data/plugins/AnnaAlexyevna__dsh-usage-watch.yml
+# 本文件已按 AnnaAlexyevna/dsh-usage-watch 填好；换账号时全局替换 AnnaAlexyevna。
+#
+# 要求（来自该仓库 contributing.md）：
+# - url 必须与仓库地址完全一致
+# - name 为 owner/repo
+# - category 取自固定分类，本项目用 usage
+# - description.en 必填、一句话、以句号结尾；description.zh 可选
+# - icon 可选，必须是 GitHub 托管的位图 URL
+
+url: https://github.com/AnnaAlexyevna/dsh-usage-watch
+name: AnnaAlexyevna/dsh-usage-watch
+category: usage
+description:
+  en: Floating usage monitor for Doubao, WorkBuddy and DSH tokens, with a sidebar entry, drag and pin.
+  zh: 悬浮窗监视豆包 / WorkBuddy / DSH Token 用量，带左侧栏入口，可拖动、可置顶。
+icon: https://raw.githubusercontent.com/AnnaAlexyevna/dsh-usage-watch/main/docs/icon-180.png

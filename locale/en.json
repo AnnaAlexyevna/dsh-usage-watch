@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Usage Watch",
+    "description": "Opens a draggable, pinnable floating window from the sidebar that monitors Doubao / WorkBuddy status and quota plus real DSH token usage."
+  }
+}

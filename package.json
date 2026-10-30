@@ -1,0 +1,59 @@
+{
+  "name": "dsh-usage-watch",
+  "version": "1.0.0",
+  "description": "Floating usage monitor for Doubao, WorkBuddy and DSH tokens — sidebar entry, draggable and pinnable panel.",
+  "type": "module",
+  "license": "MIT",
+  "author": "AnnaAlexyevna",
+  "homepage": "https://github.com/AnnaAlexyevna/dsh-usage-watch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaAlexyevna/dsh-usage-watch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnnaAlexyevna/dsh-usage-watch/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "usage",
+    "token",
+    "monitor",
+    "dashboard",
+    "doubao",
+    "workbuddy",
+    "floating-window"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs && node test/host-integration.mjs && node test/check-client.cjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
